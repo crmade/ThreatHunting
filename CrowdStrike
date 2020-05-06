@@ -1,0 +1,8 @@
+SMB conection
+event_simpleName=NetworkConnect* RemotePort_decimal=445 (RemoteAddressIP4!=192.168.0.0/16 AND RemoteAddressIP4!=10.0.0.0/8 AND RemoteAddressIP4!=172.16.0.0/12 AND RemoteAddressIP4!=127.0.0.0/8) | table ComputerName aid LocalAddressIP4 LocalPort_decimal RemoteAddressIP4 RemotePort_decimal
+
+user addes to group
+event_simpleName=UserAccountAddedToGroup GroupRid=00000220 | table ComputerName, aid, DomainSid
+
+exe from temp
+event_simpleName=ServiceStarted ImageFileName="*\\Temp\\*" CommandLine=*exe | stats count by ServiceDisplayName, ImageFileName, CommandLine
