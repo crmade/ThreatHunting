@@ -1,2 +1,2 @@
 # ThreatHunting
-Several threat hunting informatio
+Several threat hunting information
